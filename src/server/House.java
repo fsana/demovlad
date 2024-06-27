@@ -6,16 +6,18 @@ public class House {
     private String adminCompany;
     private Water water;
     private Waste waste;
-    private double sharedElectricity;    
+    private double sharedElectricity; 
+    private UnitPrices prices;   
 
     // constructor
-    public House(String id, String location, String adminCompany, Water water, Waste waste, double sharedElectricity) {
+    public House(String id, String location, String adminCompany, Water water, Waste waste, double sharedElectricity, UnitPrices prices) {
         this.id = id;
         this.location = location;
         this.adminCompany = adminCompany;
         this.waste = waste;
         this.water = water;
         this.sharedElectricity = sharedElectricity;
+        this.prices = prices;
     }
 
     // getters and setters 
@@ -67,5 +69,26 @@ public class House {
         this.sharedElectricity = sharedElectricity;
     }
 
+    public UnitPrices getPrices() {
+        return this.prices;
+    }
+
+    public void setPrices(UnitPrices prices) {
+        this.prices = prices;
+    }
+
+    public double getTotalExpenses() {
+        double result = water.getWaterInConsumption() * prices.getUpWaterIn();
+        result += water.getWaterOutConsumption() * prices.getUpWaterOut();
+        result += waste.getRecycledWasteGarbageWeight() * prices.getUpRecycledWaste();
+        result += waste.getWasteGarbageWeight() * prices.getUpWaste();
+        result += getSharedElectricity() * prices.getUpSharedElectricity();
+
+        return result;
+    }
+
+    public String toString() {
+        return "Id: " + getId() + ", Location: " + getLocation() + ", Expenses: " + getTotalExpenses();
+     }
 
 }

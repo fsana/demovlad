@@ -2,7 +2,7 @@ package client;
 
 import java.io.*;
 import java.net.*;
-import java.util.*;
+//import java.util.*;
 
 // https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html
 
@@ -13,27 +13,23 @@ public class Client {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             // reading from server
-            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            // BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            // read from System.ineibccbdvlrkigefgjuchcddncfdeblkkcdulgdulkbbi
-            
-            Scanner scanner = new Scanner(System.in);
-            String line = null;
+            if (args.length > 0 && args[0] != null && args[0].length() > 0) {
+                // read from file
+                BufferedReader fileReader = new BufferedReader(new FileReader(args[0]));
+                String line = fileReader.readLine();
+                while (line != null) {
+                    out.println(line);
+                    line = fileReader.readLine();
+                }
 
-            while(!"exit".equalsIgnoreCase(line)) {
-                // reading line using scanner
-                line = scanner.nextLine();
-
-                // sending the line to the server
-                out.println(line);
+                // close the file reader
+                fileReader.close();
+                
                 out.flush();
-
-                // display server response
-                System.out.println("Server:" + in.readLine());
+                out.close();
             }
-
-            // closing the scanner
-            scanner.close();
 
         } catch(IOException ex) {
             ex.printStackTrace();

@@ -16,3 +16,10 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+
+## Command Line Examples
+
+```
+%  /usr/bin/env /Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/bin/java --enable-preview -XX:+ShowCodeDetailsInExceptionMessages -cp /Users/fsana/extra/project1/bin client.FileReaderTest ./testInput/input2.txt
+```
