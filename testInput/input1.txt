@@ -1,0 +1,7 @@
+# comments of file 1
+
+# id_house, location, admin_company, water_in_consumption (m3), water_out_consumption (m3), recycled_waste_garbage_weight (kg), waste_garbage_weight (kg), shared_electricity (kwh)
+
+22, IF - Pantelimon, eBlocAdmin, 11, 7, 20, 8, 25
+
+23, IF - Pantelimon, eBlocAdmin, 31, 12, 28, 14, 25

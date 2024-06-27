@@ -1,0 +1,5 @@
+# comments of file 2 - unit prices (up) in RON
+
+# up_water_in, up_water_out, up_recycled_waste, up_waste, up_shared_electricity
+
+4.7, 3.9, 1.2, 3.5, 0.98
