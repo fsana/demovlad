@@ -23,3 +23,7 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 ```
 %  /usr/bin/env /Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/bin/java --enable-preview -XX:+ShowCodeDetailsInExceptionMessages -cp /Users/fsana/extra/project1/bin client.FileReaderTest ./testInput/input2.txt
 ```
+
+```
+/usr/bin/env /Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/bin/java --enable-preview -XX:+ShowCodeDetailsInExceptionMessages -cp /Users/fsana/extra/project1/bin:/Users/fsana/extra/project1/lib/sqlite-jdbc-3.46.0.0.jar::/Users/fsana/extra/project1/lib/slf4j-api-1.7.36.jar  server.TestSQLite
+```
